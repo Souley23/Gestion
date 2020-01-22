@@ -31,9 +31,9 @@
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
-                                <tr>
-                                    <th>Date debut</th>
-                                    <th>Date fin</th>
+                                <tr class="titres">
+                                    <th class="dates">Date debut</th>
+                                    <th class="dates">Date fin</th>
                                     <th>Motif Conge</th>
                                     <th>Jour Restante</th>
                                     <th>Editer</th>
@@ -46,12 +46,24 @@
                                         <td>{{$vuconges->date_debut}}</td>
                                         <td>{{$vuconges->date_fin}}</td>
                                         <td>{{$vuconges->motif}}</td>
-                                        <td><?php
-                                           $datef= $vuconges->date_fin;
-                                           $dateday = date('Y-m-d');
-                                           $dureesejour = (strtotime($datef) - strtotime($dateday))/86400;
-                                           echo $dureesejour;
-                                        ?>
+                                        <td> <?php
+                                               $hoje = strtotime(date('Y-m-d'));
+                                               $dat =  strtotime($vuconges->date_fin);
+                                               $jr =ceil(abs($dat - $hoje) / 86400);
+                                               if($jr>20)
+                                               {
+                                                $color='#03C305';
+                                               }
+                                               elseif($jr<=20 && $jr>=6)
+                                               {
+                                                $color='#1A5276';
+                                               }
+                                               else
+                                               {
+                                                $color='#C31203';
+                                               }
+                                               echo "<b style='color:$color'>".$jr."</b>";
+                                            ?>
                                         </td>
 
                                         <td><p><a class="btn btn-primary" href="{{route('edit_conge',['id'=>$vuconges->id])}}">Editer</a></td>
@@ -68,6 +80,13 @@
                                 </tbody>
 
                             </table>
+                            <div class="legende">
+                                <h4>Legende des joures des conges</h4>
+                            </div>
+                            <div class="legende">
+                                <div class="niv1">???</div> <div class="niv2">???</div> <div class="niv3">???</div>
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -78,6 +78,12 @@ Route::get("/pointage", "tallController@pointage")->name('tablpointage');
 Route::delete('Pointage/{id}',"tallController@destroy");
 Route::get('pointage/{id}/edit',"tallController@edit")->name("edit_pointage");
 
+// moderator Controller
+  Route::get("/Superviseur", "ModeratorController@Moderator");
+	Route::get("/employer", "ModeratorController@employer")->name('employer');
+	Route::get("/conges", "ModeratorController@conges")->name("vudeconges");
+	Route::get("/pointages", "ModeratorController@pointages")->name("vupointages");
+	Route::get("/departement", "ModeratorController@departement")->name("dpt");
 
 
 Auth::routes();

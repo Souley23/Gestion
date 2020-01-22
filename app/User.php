@@ -40,11 +40,10 @@ class User extends Authenticatable
     public function isAdmin(){
     return strtolower(@$this->role) === 'admin'? true : false;
     }
- 
     /**Cett méthode va determiner si le user connecté a un role moderator*/
     public function isModerator(){
     return strtolower(@$this->role) === 'moderator'? true : false;
-    }   
+    }
        // return $this->belongsTo('App\personne');
     //}
 }

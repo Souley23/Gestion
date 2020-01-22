@@ -1,5 +1,4 @@
 @extends('layouts.adminlay')
-
 @section('admin')
 <div class="container">
     <div class="row justify-content-center">
@@ -9,7 +8,7 @@
 
                 <div class="card-body">
                    <div class="imadmin">
-                       <img class="imdmin" src="{{asset('images/admin.png')}}">
+                       <img class="imdmin" src="{{asset('images/TR.png')}}">
                    </div>
                 </div>
             </div>

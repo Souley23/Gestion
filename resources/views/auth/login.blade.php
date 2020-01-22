@@ -5,7 +5,7 @@
     <div class="row justify-content-center cont">
         <div class="col-md-12"><h3>Gestion des Ressources Humaines</h3></div>
         <div class="col-md-4 imgs">
-            <img class="imaglogin" src="{{asset('images/gestion.png')}}">
+            <img class="imaglogin" src="{{asset('images/loggg.png')}}">
         </div>
         <div class="col-md-6">
             <div class="card">
