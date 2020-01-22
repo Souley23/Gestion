@@ -19,24 +19,24 @@ class ModeratorController extends Controller
     {
     	$persos = Personne::all();
     	 $persos = Personne::orderBy('created_at','DESC')->paginate(5);
-        return view('moderator.employer', compact('persos'));
+        return view('employer', compact('persos'));
     }
     public function conges()
     {
     	$conge = Vuconge::all();
     	$conge = Vuconge::orderBy('nom','DESC')->paginate(5);
-        return view('moderator.conges',compact('conge'));
+        return view('conges',compact('conge'));
     }
      public function pointages()
      {
      	$pointer = vupointage::all();
      	$pointer = vupointage::orderBy('datejr','DESC')->paginate(5);
-        return view('moderator.pointages',compact('pointer'));
+        return view('pointages',compact('pointer'));
     }
      public function departement()
      {
      	$deptmt = department::all();
      	$deptmt = department::orderBy('created_at','DESC')->paginate(5);
-        return view('moderator.departement',compact('deptmt'));
+        return view('departement',compact('deptmt'));
     }
 }
